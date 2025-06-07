@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { items } from "../assets/assets";
 // import { useAuthActions } from "../utils/Auth";
 
 //eslint-disable-next-line react-refresh/only-export-components
@@ -14,8 +15,14 @@ export const AuthContextProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [adminDetails, setAdminDetails] = useState({});
 
+    let result;
+    const Linkitems = items;
+    if (isAdmin) {
+        const items = Linkitems.filter(item => item.user === true);
+        result = items;
+    }
 
-
+    console.log(result);
 
     // const {  fetchAdmin, fetchUser, getUserProfile  } = useAuthActions();
 
@@ -40,7 +47,7 @@ export const AuthContextProvider = ({ children }) => {
     //     }, [])
 
 
-    const Values = { user, setUser, setIsHR , isHR, isAdmin, setIsAdmin, toast, loading, setLoading, navigate, adminDetails, setAdminDetails };
+    const Values = { user, setUser, setIsHR, isHR, isAdmin, setIsAdmin, toast, loading, setLoading, navigate, adminDetails, setAdminDetails };
     return (
         <AuthContext.Provider value={Values}>
             {children}

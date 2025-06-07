@@ -1,55 +1,60 @@
-import {   BriefcaseBusinessIcon, CalendarCheck2, Combine,  DollarSign,  LayoutDashboard,  NotepadText,   Settings, Users, UsersRound } from "lucide-react";
+// import {   BriefcaseBusinessIcon, CalendarCheck2, Combine,  DollarSign,  LayoutDashboard,  NotepadText,   Settings, Users, UsersRound } from "lucide-react";
 
 // Menu items.
 export const items = [
   {
     title: "Dashboard",
     url: "/dashboard",
-    icon: LayoutDashboard,
+    // icon: LayoutDashboard, // Dashboard icon
+    admin: true,
   },
   {
     title: "All Employees",
     url: "/dashboard/AllEmployees",
-    icon: Users,
+    // icon: Users, // Users icon
   },
   {
     title: "All Departments",
     url: "/dashboard/AllDepartments",
-    icon: Combine,
+    // icon: Combine, // Departments icon
   },
   {
     title: "Attendance",
     url: "/dashboard/Attendance",
-    icon: CalendarCheck2,
+    // icon: CalendarCheck2, // Calendar/Attendance icon
+    user: true,
   },
   {
     title: "Payroll",
     url: "/dashboard/Payroll",
-    icon: DollarSign,
+    admin: true,
+    // icon: DollarSign, // Payroll icon
   },
   {
     title: "Jobs",
     url: "/dashboard/Jobs",
-    icon: BriefcaseBusinessIcon,
+    // icon: BriefcaseBusinessIcon, // Jobs icon
   },
   {
     title: "Candidates",
     url: "/dashboard/Candidates",
-    icon: UsersRound,
+    // icon: UsersRound, // Candidates icon
   },
   {
     title: "Leaves",
     url: "/dashboard/Leaves",
-    icon: NotepadText,
+    // icon: NotepadText, // Leaves icon
   },
   {
     title: "Holidays",
     url: "/dashboard/Holidays",
-    icon: NotepadText,
+    admin: true
+    // icon: NotepadText, // Holidays icon
   },
   {
     title: "Settings",
     url: "/dashboard/Settings",
-    icon: Settings,
+    admin:true
+    // icon: Settings, // Settings icon
   },
 ];
